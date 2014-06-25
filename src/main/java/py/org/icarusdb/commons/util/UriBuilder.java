@@ -18,6 +18,8 @@
  */
 package py.org.icarusdb.commons.util;
 
+import java.util.Map;
+
 import py.org.icarusdb.commons.parameter.GlobalParameters;
 
 /**
@@ -50,6 +52,11 @@ public class UriBuilder
         return "http://" + server + ":"+port + "/"+moduleName + serviceName + loginPath;
     }
     
+    public static String buildUri(Map<String, String> connInfo, String serviceModuleName)
+    {
+        return buildUri(new IDBProperties(connInfo), serviceModuleName);
+    }
+    
     public static String buildUri(IDBProperties properties, String serviceModuleName)
     {
         String server = (String) properties.get(GlobalParameters.REST_KEY_SERVER);
@@ -74,6 +81,6 @@ public class UriBuilder
         
         return uri;
     }
-    
+
     
 }

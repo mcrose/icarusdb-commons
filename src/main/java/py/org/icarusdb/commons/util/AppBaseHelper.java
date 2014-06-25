@@ -18,8 +18,6 @@
  */
 package py.org.icarusdb.commons.util;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Iterator;
@@ -149,9 +147,9 @@ public class AppBaseHelper
         return nf.format(new BigDecimal(sval));
     }
 
-    public static String getRESTfullConfig(String serviceModuleName, String cfgFileName, String projectCfgPath) throws FileNotFoundException, IOException
-    {
-        return UriBuilder.buildUri(FileHelper.loadConfigParams(cfgFileName, projectCfgPath), serviceModuleName);
-    }
+//    public static String getRESTfullConfig(String serviceModuleName, String cfgFileName, String projectCfgPath) throws FileNotFoundException, IOException
+//    {
+//        return UriBuilder.buildUri(FileHelper.loadConfigParams(cfgFileName, projectCfgPath), serviceModuleName);
+//    }
     
 }
