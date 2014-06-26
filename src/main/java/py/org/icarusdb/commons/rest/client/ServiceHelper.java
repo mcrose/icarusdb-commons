@@ -56,6 +56,8 @@ public abstract class ServiceHelper
     
     protected Map<String, String> connInfo = new HashMap<String, String>();
 
+    public abstract void loadConfig() throws Exception;
+    
     public abstract String getConnInfo(String key);
     
     public abstract  Map<String, String> getConnInfo();
