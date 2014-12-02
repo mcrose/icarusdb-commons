@@ -70,4 +70,6 @@ public class GlobalParameters
     public static final String ID = "id";
     public static final String SELECTED = "SELECTED";
     
+    public static final String BASE_BUNDLE_URL = "py.com.icarusdb.messages.CommonMessages";
+
 }

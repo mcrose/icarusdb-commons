@@ -19,6 +19,7 @@
 package py.org.icarusdb.commons.session;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
@@ -33,7 +34,7 @@ public class BaseCredentials implements Serializable
     /**
      * 
      */
-    private static final long serialVersionUID = -2575091330114049868L;
+    private static final long serialVersionUID = -5239334795394463901L;
     
     protected String ipAddr;
     protected String username;
@@ -41,8 +42,20 @@ public class BaseCredentials implements Serializable
     
     protected Properties parameters = null;
     
-    protected List<String> rols = null;
+    protected List<String> roles = null;
     
+    
+    
+    
+    public void init()
+    {
+        ipAddr = null;
+        username = null;
+        password = null;
+        parameters = new Properties();
+        roles = new LinkedList<String>();
+    }
+
     public String getIpAddr()
     {
         return ipAddr;
@@ -90,22 +103,22 @@ public class BaseCredentials implements Serializable
 
     public void addRole(String rol)
     {
-        rols.add(rol);
+        roles.add(rol);
     }
     
     public boolean hasRol(String rol)
     {
-        return rols.contains(rol);
+        return roles.contains(rol);
     }
  
-    public List<String> getRols()
+    public List<String> getRoles()
     {
-        return rols;
+        return roles;
     }
     
-    public void setRols(List<String> rols)
+    public void setRoles(List<String> rols)
     {
-        this.rols = rols;
+        this.roles = rols;
     }
 
 }
